@@ -1,35 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Counter } from "./Counter";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
-import {
-  useGetAllAnimalsQuery,
-  useGetSpecificAnimalQuery,
-} from "../store/animalApi";
+import { BrowserRouter as Router, Switch, NavLink } from "react-router-dom";
+import Routes from "./Routes";
 
 function App() {
-  const {
-    data: allAnimals,
-    error: allAnimalsError,
-    isLoading: allAnimalsIsLoading,
-  } = useGetAllAnimalsQuery();
-  const {
-    data: specificAnimal,
-    error: specificAnimalError,
-    isLoading: specificAnimalIsLoading,
-  } = useGetSpecificAnimalQuery(1);
-  console.log(`allAnimals`, allAnimals);
-  console.log(`allAnimalsError`, allAnimalsError);
-  console.log(`allAnimalsIsLoading`, allAnimalsIsLoading);
-  console.log(`specificAnimal`, specificAnimal);
-  console.log(`specificAnimalError`, specificAnimalError);
-  console.log(`specificAnimalIsLoading`, specificAnimalIsLoading);
   return (
     <Router>
       <header
@@ -74,24 +48,10 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route exact path="/counter">
-            <Counter />
-          </Route>
-          <Route exact path="/">
-            <div>Hi!</div>
-          </Route>
+          <Routes />
         </Switch>
       </main>
-      <footer>
-        <button
-          type="button"
-          onClick={() => {
-            dispatch(requestAnimals());
-          }}
-        >
-          Button Text
-        </button>
-      </footer>
+      <footer></footer>
     </Router>
   );
 }
