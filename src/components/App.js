@@ -9,6 +9,9 @@ function App() {
     <Router>
       <div
         css={css`
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
           header,
           main,
           footer {
@@ -17,10 +20,20 @@ function App() {
             margin: auto;
             position: relative;
           }
+          header,
+          footer {
+            height: 100px;
+            flex-shrink: 0;
+            flex-direction: column;
+            display: flex;
+          }
           header {
             background: #ddd;
+            justify-content: flex-end;
+            gap: 10px;
             h1 {
               color: black;
+              font-size: 40px;
             }
             nav {
               ul {
@@ -29,6 +42,7 @@ function App() {
                 gap: 20px;
                 li {
                   a {
+                    padding: 5px 10px;
                     text-decoration: none;
                     color: #555;
                     &.active {
@@ -41,6 +55,11 @@ function App() {
           }
           main {
             background: white;
+            flex-grow: 1;
+            padding: 30px;
+          }
+          footer {
+            justify-content: center;
           }
         `}
       >
