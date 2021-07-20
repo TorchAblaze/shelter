@@ -22,7 +22,7 @@ namespace RestServer.Controllers
 
     private async Task<Animal> AnimalWithId(int id) => await _db.Animals.FindAsync(id);
 
-    [HttpGet]
+    [HttpGet("animals/")]
     public async Task<ActionResult<IEnumerable<Animal>>> GetAllAnimals()
     => await _db.Animals.ToListAsync();
 
@@ -31,7 +31,7 @@ namespace RestServer.Controllers
     => await AnimalWithId(id);
 
 
-    
+
     [HttpPost("animals/")]
     public async Task<ActionResult<Animal>> PostAnimal(Animal animal)
     {
