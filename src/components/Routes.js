@@ -1,5 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import AnimalDetails from "./AnimalDetails.js";
 import AnimalList from "./AnimalList.js";
 import { Counter } from "./Counter";
 
@@ -14,6 +15,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/animals">
         <AnimalList />
+      </Route>
+      <Route exact path="/details/:id">
+        <AnimalDetails />
       </Route>
     </>
   );
