@@ -18,13 +18,12 @@ const AnimalList = () => {
   return (
     <ul
       css={css`
-        padding: 30px;
         display: flex;
         flex-direction: column;
         gap: 30px;
+        list-style-type: none;
         li {
           // ul li
-          margin-left: 30px;
           ~ li {
             // ul li ~ li
             border-top: 1px solid black;
