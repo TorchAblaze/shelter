@@ -20,7 +20,6 @@ namespace RestServer.Models
               new Animal { Id = 10, Name = "Nymeria", Age = 1, Type="dog", Sex = "Female", Available= true},
               new Animal { Id = 11, Name = "Summer", Age = 1, Type="dog", Sex = "Male", Available= false},
               new Animal { Id = 12, Name = "Shaggy Dog", Age = 1, Type="dog", Sex = "Male", Available= false}
-              
           );
     }
     public DbSet<Animal> Animals { get; set; }
