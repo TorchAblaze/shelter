@@ -1,4 +1,4 @@
-import animalListReducer, { defaultState } from "../../store/animalSlice.js";
+import animalListReducer, { defaultState } from "../../store/animalApi.js";
 
 describe("animalListReducer", () => {
   test("Should return default state if there is no action type passed into the slice", () => {
